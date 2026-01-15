@@ -9,6 +9,10 @@ const Random2=()=>{
         <>
         <h1>{number}</h1>
         <button onClick={()=>setRandom(number)}>Click</button>
+        <br/>
+        <br/>
+        <br/>
+        <Link to="/">Back to Home</Link>
         </>
     )
 }
