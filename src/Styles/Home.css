@@ -1,0 +1,22 @@
+body{
+    text-align:center;
+    background-color: #0f172a;
+    color: #e5e7eb;
+
+}
+
+#head{
+    color:black;
+}
+
+
+#main{
+    border:2px solid black;
+    border-radius:15px;
+    height:200px;
+    position:relative;
+    top:180px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #f2f2f2;
+}
+
