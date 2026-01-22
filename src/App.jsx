@@ -116,29 +116,90 @@
 
 // export default FormRev 
 
-import Random2 from './pages/Random2'
-import { Routes,Route } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Counter2 from './pages/Counter2' 
-import Form from './pages/Form';
-import Random from './pages/Random2';
+
+// import {useState, useEffect} from "react";
+
+// import React from 'react'
+
+// const App = () => {
+
+//     const[imgUrl, setImgUrl] = useState("");
+//     useEffect(()=>{
+//         fetch("https://api.thecatapi.com/v1/images/search")
+//         .then((res)=>res.json())
+//         .then((data)=>{
+//             console.log(data)
+//             setImgUrl(data[0].url)
+//         })
+//     },[])
+
+//   return (
+//     <div>
+//       {imgUrl && 
+//         <img src={imgUrl}/>
+//       }
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import { useState, useEffect } from "react";
+import './App.css'
 import React from 'react'
 
 const App = () => {
-  return (
-    <>
-    <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path='/Random2' element={<Random2/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/counter2' element={<Counter2/>}/>
-        <Route path='/form' element={<Form/>}/>
-        <Route path='/random' element={<Random2/>}/>
-    </Routes>
-    </>
+
+    const[city_name, setcity_name] = useState("")
+    const api_key = "5a9278fb868733a63a99b79fbdd65afd"
+    const[dataa, setDataa] = useState(null)
+    
+    
+     const handleSubmit = (e)=>{
+        e.preventDefault();
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`)
+        .then((res)=>res.json())
+        .then((data)=>{
+            console.log(data)
+        setDataa(data)})
+        
+    }
+
+    return (
+     <>
+    <div id="main">
+        <div id="weather">
+            <h1>Weather App</h1>
+        <br/>
+        <br/>
+        <form onSubmit={handleSubmit}>
+            Enter Location: <input 
+            id="textbox"
+            type="text"
+            value={city_name}
+            onChange={(e)=>setcity_name(e.target.value)}
+            />
+            <br/>
+            <br/>
+            <button id="button" type="submit">submit</button>
+        </form>
+        </div>
+
+        <div id="data">
+            
+        {dataa?.main && dataa?.weather &&(
+            <>
+              <h1>Temp:{dataa.main.temp}</h1>
+              <h1>Weather condition: {dataa.weather[0].main}</h1>
+              <h1>Humidity:{dataa.main.humidity}</h1>
+            </>
+        )}
+
+        </div>
+     </div>
+     </>
+
   )
 }
 
