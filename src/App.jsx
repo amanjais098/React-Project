@@ -58,6 +58,8 @@
 
 // import './index.css'
 
+// import '../src/Styles/Form.css'
+
 // import React from "react";
 // import { useState } from "react";
 
@@ -117,6 +119,9 @@
 // export default FormRev 
 
 
+
+
+
 // import {useState, useEffect} from "react";
 
 // import React from 'react'
@@ -145,63 +150,88 @@
 // export default App
 
 
-import { useState, useEffect } from "react";
-import './App.css'
-import React from 'react'
+// import { useState, useEffect } from "react";
+// import './App.css'
+// import React from 'react'
 
-const App = () => {
+// const App = () => {
 
-    const[city_name, setcity_name] = useState("")
-    const api_key = "5a9278fb868733a63a99b79fbdd65afd"
-    const[dataa, setDataa] = useState(null)
+//     const[city_name, setcity_name] = useState("")
+//     const api_key = "5a9278fb868733a63a99b79fbdd65afd"
+//     const[dataa, setDataa] = useState(null)
     
     
-     const handleSubmit = (e)=>{
-        e.preventDefault();
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`)
-        .then((res)=>res.json())
-        .then((data)=>{
-            console.log(data)
-        setDataa(data)})
+//      const handleSubmit = (e)=>{
+//         e.preventDefault();
+//         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`)
+//         .then((res)=>res.json())
+//         .then((data)=>{
+//             console.log(data)
+//         setDataa(data)})
         
-    }
+//     }
 
-    return (
-     <>
-    <div id="main">
-        <div id="weather">
-            <h1>Weather App</h1>
-        <br/>
-        <br/>
-        <form onSubmit={handleSubmit}>
-            Enter Location: <input 
-            id="textbox"
-            type="text"
-            value={city_name}
-            onChange={(e)=>setcity_name(e.target.value)}
-            />
-            <br/>
-            <br/>
-            <button id="button" type="submit">submit</button>
-        </form>
-        </div>
+//     return (
+//      <>
+//     <div id="main">
+//         <div id="weather">
+//             <h1>Weather App</h1>
+//         <br/>
+//         <br/>
+//         <form onSubmit={handleSubmit}>
+//             Enter Location: <input 
+//             id="textbox"
+//             type="text"
+//             value={city_name}
+//             onChange={(e)=>setcity_name(e.target.value)}
+//             />
+//             <br/>
+//             <br/>
+//             <button id="button" type="submit">submit</button>
+//         </form>
+//         </div>
 
-        <div id="data">
+//         <div id="data">
             
-        {dataa?.main && dataa?.weather &&(
-            <>
-              <h1>Temp:{dataa.main.temp}</h1>
-              <h1>Weather condition: {dataa.weather[0].main}</h1>
-              <h1>Humidity:{dataa.main.humidity}</h1>
-            </>
-        )}
+//         {dataa?.main && dataa?.weather &&(
+//             <>
+//               <h1>Temp:{dataa.main.temp}</h1>
+//               <h1>Weather condition: {dataa.weather[0].main}</h1>
+//               <h1>Humidity:{dataa.main.humidity}</h1>
+//             </>
+//         )}
 
-        </div>
-     </div>
-     </>
+//         </div>
+//      </div>
+//      </>
 
-  )
+//   )
+// }
+
+// export default App
+
+
+
+
+import React from 'react';
+import { Route,Routes } from 'react-router-dom';
+import Signup from './pages/Signup'
+import Login from './pages/Login'
+import { jsx } from 'react/jsx-runtime';
+import Dashboard from './pages/Dashboard';
+import Users from './pages/Users';
+import Random2 from './pages/Random2';
+function App(){
+    return(
+        <>
+        <Routes>
+            <Route path="/" element={<Signup/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route path="/users" element={<Users/>}/>
+            <Route path="/random" element={<Random2/>}/>
+        </Routes>
+        </>
+    )
 }
-
-export default App
-
+export default App;

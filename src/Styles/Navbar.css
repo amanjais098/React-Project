@@ -1,0 +1,81 @@
+
+#main{
+    border:2px solid black;
+    height:40px;
+    border-radius:10px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #0F0F0F;
+
+    color:white;
+}
+
+#login{
+    border:2px solid black;
+    border-radius:5px;
+    transition: all 0.2s ease-in-out 0s;
+
+}
+
+#loginlink{
+    text-decoration:none;
+    color:white;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#loginlink:hover{
+    background-color:rgba(255, 255, 255, 0.745);
+    color:black;
+}
+
+
+#signup{
+    border:2px solid black;
+    border-radius:5px;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#signuplink{
+    text-decoration:none;
+    color:white;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#signuplink:hover{
+    background-color:rgba(255, 255, 255, 0.745);
+    color:black;
+    border-radius:5px;
+}
+
+
+
+
+#userlink{
+    text-decoration:none;
+    color:white;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#userlink:hover{
+    background-color:rgba(255, 255, 255, 0.745);
+    color:black;
+    border-radius:5px;
+}
+
+
+
+
+#randomlink{
+    text-decoration:none;
+    color:white;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+
+#randomlink:hover{
+    background-color:rgba(255, 255, 255, 0.745);
+    color:black;
+}
+
+

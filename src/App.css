@@ -7,7 +7,7 @@ body{
 #main{
     border:2px solid black;
     height:600px;
-    width:800px;
+    /* width:800px; */
     text-align:Center;
     /* display:flex; */
     align-items: center;
@@ -16,7 +16,6 @@ body{
     /* flex-wrap:wrap; */
     position:relative;
     top:85px;
-    left:350px;
     border-radius:20px;
     transition:all 0.2s ease-in 0s;
     background-color:#f8fafcd3;
